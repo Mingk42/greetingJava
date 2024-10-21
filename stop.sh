@@ -1,9 +1,10 @@
 #!/bin/bash
 
-JAR_FILE_NAME=greeting-0.0.1-SNAPSHOT.jar
+# JAR_FILE_NAME=greeting-0.0.1-SNAPSHOT.jar
+JAR_FILE_NAME=app.jar
 
 # Get PID from the file
-PID=$(pgrep -f $JAR_FILKE_NAME)
+PID=$(pgrep -f $JAR_FILE_NAME)
 
 if [ -z "$PID" ]; then
 	echo "> 현재 구동중인 어플리케이션이 없습니다. 종료할 수 없습니다."
