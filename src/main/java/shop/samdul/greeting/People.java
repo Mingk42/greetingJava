@@ -1,4 +1,4 @@
-package shop.samdul.hellojava;
+package shop.samdul.greeting;
 
 public class People {
     int num;
