@@ -10,18 +10,35 @@ import java.util.ArrayList;
 
 @Controller
 public class greetingController {
-    ArrayList<String> remember = new ArrayList<String>();
+    // ArrayList<String> remember = new ArrayList<String>();
+
+    // @GetMapping("/greeting")
+    // public String greeting(
+    //         @RequestParam(name="name", required=false, defaultValue = "Hi")
+    //         String name,
+    //         Model model
+    // ) {
+    //     remember.add(name);
+
+    //     model.addAttribute("name", name);
+    //     model.addAttribute("history", remember);
+
+    //     return "greeting";
+    // }
+    
+    Stack<People> peopleStack = new Stack<People>();
 
     @GetMapping("/greeting")
     public String greeting(
-            @RequestParam(name="name", required=false, defaultValue = "Hi")
+            @RequestParam(name="name", required = false, defaultValue = "Hi")
             String name,
-            Model model
-    ) {
-        remember.add(name);
+            Model model) {
 
-        model.addAttribute("name", name);
-        model.addAttribute("history", remember);
+        People p = new People(peopleStack.size()+1, name);
+        peopleStack.push(p);
+
+        model.addAttribute("peopleStack", peopleStack);
+        model.addAttribute("last", peopleStack.peek().getName());
 
         return "greeting";
     }

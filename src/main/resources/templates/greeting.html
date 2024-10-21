@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,5 +12,32 @@
     <ul th:each="elem:${history}">
        <li th:text="${elem}"></li>
     </ul>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Greeting</title>
+    <!--link href="/css/style.css" rel="stylesheet"/-->
+</head>
+<body>
+    <h1>Greeting</h1>
+    <h3>Hello, <span th:text="${last}"></span></h3>
+    <h5>이전 방문자</h5>
+    <ul th:each="person:${peopleStack}">
+        <li th:text="${person.num} + '번째 방문자 :: ' + ${person.name}"></li>
+    </ul>
+    <table style="border: 1px black solid; border-collapse: collapse;">
+        <tr >
+            <th style="border: 1px black solid">No.</th>
+            <th style="border: 1px black solid">Name</th>
+        </tr>
+        <tr th:each="person:${peopleStack}">
+            <td th:text="${person.num}" style="border: 1px black solid;padding: 5px;text-align:center;"></td>
+            <td th:text="${person.name}" style="border: 1px black solid;padding: 5px;text-align:center;"></td>
+        </tr>
+    </table>
 </body>
 </html>
