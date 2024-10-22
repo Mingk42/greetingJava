@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="shop.samdul.greeting.mapper.TodoMapper">
+    <select id="findAll" resultType="shop.samdul.greeting.entitiy.TodoEntity">
+        SELECT id, subject, body, completed
+        FROM encore_todo_tbl
+        ORBER BY id DESC
+    </select>
+</mapper>
