@@ -1,5 +1,6 @@
 package shop.samdul.greeting.entitiy;
 
+
 import lombok.Setter;
 import lombok.Getter;
 import lombok.ToString;

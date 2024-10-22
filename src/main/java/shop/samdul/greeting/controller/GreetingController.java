@@ -10,7 +10,7 @@ import java.util.Stack;
 import shop.samdul.greeting.People;
 
 @Controller
-public class greetingController {
+public class GreetingController {
     // ArrayList<String> remember = new ArrayList<String>();
 
     // @GetMapping("/greeting")
