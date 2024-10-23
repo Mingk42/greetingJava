@@ -27,19 +27,25 @@ public class TodoService {
         return entity;
     }
 
-    public void createEntity(TodoEntity todoEntity){
+    public int createEntity(TodoEntity todoEntity){
         System.out.println("[SERVICE] createEntity");
         System.out.println("[SERVICE] "+todoEntity.toString());
-        todoMapper.createEntity(todoEntity.getSubject(), todoEntity.getBody(), todoEntity.getCompleted());
+        int result = todoMapper.createEntity(todoEntity.getSubject(), todoEntity.getBody(), todoEntity.getCompleted());
+
+        return result;
     }
 
-    public void deleteById(int id){
+    public int deleteById(int id){
         System.out.println("[SERVICE] deleteById");
-        todoMapper.deleteById(id);
+        int result = todoMapper.deleteById(id);
+
+        return result;
     }
 
-    public void updateById(TodoEntity todoEntity){
+    public int updateById(TodoEntity todoEntity){
         System.out.println("[SERVICE] updateById");
-        todoMapper.updateById(todoEntity.getId(), todoEntity.getSubject(), todoEntity.getBody(), todoEntity.getCompleted());
+        int result = todoMapper.updateById(todoEntity.getId(), todoEntity.getSubject(), todoEntity.getBody(), todoEntity.getCompleted());
+
+        return result;
     }
 }

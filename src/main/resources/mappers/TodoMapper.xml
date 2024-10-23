@@ -7,12 +7,12 @@
         FROM ENCORE_TODO_TBL
         ORDER BY id DESC
     </select>
-    <select id="findById" resultType="shop.samdul.greeting.entitiy.TodoEntity">
+    <select id="findById" resultType="shop.samdul.greeting.entitiy.TodoEntity" parameterType="int">
         SELECT id, subject, body, completed
         FROM ENCORE_TODO_TBL
         WHERE id=#{id}
     </select>
-    <delete id="deleteById">
+    <delete id="deleteById" parameterType="int">
         DELETE FROM ENCORE_TODO_TBL
         WHERE id=#{id}
     </delete>

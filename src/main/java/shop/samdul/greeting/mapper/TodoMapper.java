@@ -12,7 +12,7 @@ public interface TodoMapper {
     TodoEntity findById(int id);
 
     //TodoEntity createEntity(TodoEntity todoEntity);
-    void createEntity(String subject, String body, Boolean completed);
-    void deleteById(int id);
-    void updateById(int id, String subject, String body, Boolean completed);
+    int createEntity(String subject, String body, Boolean completed);
+    int deleteById(int id);
+    int updateById(int id, String subject, String body, Boolean completed);
 }
